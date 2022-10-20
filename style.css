@@ -5,54 +5,46 @@
 }
 html {
     font-size: 62.5%;
+    font-family: 'Space Mono', monospace;
+    width: 100vw;
+    height: 100vh;
 }
 .container {
-    display: block;
-    background-color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 9vh 35vh 17vh 14vh 12vh 14vh;
 }
 .subtitle {
-    width: 133px;
-    margin-top: 24px;
-    margin-left: 2.4rem;
-    margin-bottom: .4rem;
     font-family: 'Inconsolata', monospace;
-    font-size: 24px;
+    padding: 20px 24px;
+    font-size: 2.4rem; 
     font-weight: bold;
-    line-height: 25px;
+    line-height: 2.5rem;
     letter-spacing: -1.9px;
     text-transform: uppercase;
 }
-.subcontainer img {
-    display: block;
-    margin: 6rem auto;
-    width: 76.5%;    
-}
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.container img {
+    width: 326px;
+    padding: 20px;
+    place-self: center;
 }
 .title {
-    width: 93.3%;
     font-family: 'Space Mono', monospace;
+    padding: 0 1px 0 44px;
     font-size: 4.8rem;
-    margin-left: 2.4rem;
-    margin-bottom: 3rem;
-    letter-spacing: -0.3rem;
     font-weight: bold;
+    letter-spacing: -0.3rem;
 }
 .container p {
-    width: 328px;
-    font-family: 'Space Mono', monospace;
-    margin: 0 24px;
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 2.6rem;
+    padding: 30px 44px;
 }
 .back {
     width: 216px;
     height: 68px;
-    margin: 6.6rem 2.4rem;
+    margin: 22px 44px;
     font-family: 'Space Mono', monospace;
     font-size: 14px;
     font-weight: bold;
@@ -60,16 +52,34 @@ html {
     color: #FFFFFF;
 }
 footer p {
-    position: absolute;
-    bottom: 24px;
-    width: 287px;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 24px;
 }
+@media (min-width: 1024px) {
+    .subtitle {
+        margin-bottom: 100px;
+    }
+    .container {
+        grid-template-columns: 60% 40%;
+        grid-template-rows: auto;
+    }
+    .container img {
+        grid-column: 1 / 2;
+        grid-row: 2 / 5;
+        width: 539px;
+    }
+    .title {
+        grid-row: 2 / 3;
+    }
+    .container p {
+        grid-row: 3 / 4;
+    }
+    .back {
+        grid-row: 4 / 5;
+    }
+}
+/* 
 @media (min-width: 1440px)  {
     .subtitle {
         margin-top: 4rem;
@@ -105,5 +115,5 @@ footer p {
     }
     .back {
         margin: 4rem 2.4rem;
-    }
+    } */
 }
